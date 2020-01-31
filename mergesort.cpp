@@ -1,4 +1,4 @@
-//Program 4 by Josiah Manning
+//Program 4 by Josiah Manning for Theory of Algorithms
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -6,7 +6,7 @@ using namespace std;
 
 bool isSorted(double *ptrX, int sizeOfX); //isSorted prototype; checks to see if the series is in ascending order
 
-bool mergeTwoSortedSeries (double * ptrA, int sizeOfA, double * ptrB, int sizeOfB, double * ptrC){
+bool mergeTwoSortedSeries (double * ptrA, int sizeOfA, double * ptrB, int sizeOfB, double * ptrC){ //merge the two sorted vectors
 	bool isInService = true;
 	int countA = 0, countB = 0, countC = 0;
 
@@ -61,7 +61,7 @@ bool mergeTwoSortedSeries (double * ptrA, int sizeOfA, double * ptrB, int sizeOf
 
 
 
-bool isSorted(double *ptrX, int sizeOfX){
+bool isSorted(double *ptrX, int sizeOfX){ //return true if vector is sorted
 	if (sizeOfX == 1 || sizeOfX == 0)// if vector is 1 or 0
 		return true;
 	else if (sizeOfX == 2){ //if vector is 2, check if in order
@@ -82,7 +82,7 @@ bool isSorted(double *ptrX, int sizeOfX){
 }
 
 
-void mergeSort(double * ptrSeriesToSort, int sizeOfSeries){
+void mergeSort(double * ptrSeriesToSort, int sizeOfSeries){ //mergesort core function
 	double temp;
 
 	//preconditions
@@ -138,7 +138,7 @@ Start:
 	bool isInService = true;
 	char key;
 	double *ptrA = nullptr, *ptrB = nullptr, *ptrC = nullptr;
-	const string filename = "lomutodata.txt";
+	const string filename = "sortme.txt";
 	vector<int> numsTemp;
 	int temp;
 	
@@ -153,7 +153,7 @@ Start:
 
 	cin >> key;
 
-	cout << "Opening file lomutodata.txt..." << endl;
+	cout << "Opening file sortme.txt..." << endl;
 	ifstream fin(filename);
 
 	cout << "Reading file to memory..." << endl;
@@ -219,7 +219,7 @@ Start:
 
 	cin >> key;
 
-	if (key == 'a' || key == 'A')
+	if (key == 'a' || key == 'A') //restart option
 		goto Start;
 	else
 		return 0;
